@@ -1,34 +1,35 @@
-import Close from "../assets/times.png";
+import Close from '../assets/times.png'
 
-function Sidebar({ handleSidebar, show }) {
+const Sidebar = ({ handleSidebar, show }) => {
   const sidebarMenu = [
     {
-      name: "Men",
-      link: "#",
+      name: 'Men',
+      link: '#',
     },
     {
-      name: "Women",
-      link: "#",
+      name: 'Women',
+      link: '#',
     },
     {
-      name: "Kids",
-      link: "#",
+      name: 'Kids',
+      link: '#',
     },
     {
-      name: "Customize",
-      link: "#",
+      name: 'Customize',
+      link: '#',
     },
     {
-      name: "Sale",
-      link: "#",
+      name: 'Sale',
+      link: '#',
     },
-  ];
+  ]
+
   return (
-    <div className={`sidebar ${show ? "show" : ""}`}>
-      <div className="close" onClick={handleSidebar}>
-        <img src={Close} alt="Close" />
+    <div className={`sidebar ${show ? 'show' : ''}`}>
+      <div className='close' onClick={handleSidebar}>
+        <img src={Close} alt='Close' />
       </div>
-      <div className="menu__mobile">
+      <div className='menu__mobile'>
         {sidebarMenu.map((menu, index) => (
           <a href={menu.link} key={index}>
             {menu.name}
@@ -36,7 +37,7 @@ function Sidebar({ handleSidebar, show }) {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default Sidebar;
+export default Sidebar

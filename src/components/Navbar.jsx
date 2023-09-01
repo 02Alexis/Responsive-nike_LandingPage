@@ -54,9 +54,9 @@ function Navbar({ navbarStyle, handleSidebar }) {
       <div className={`navbar__cart ${navbarStyle || 'navbar-one'}`}>
         <img src={Cart} alt="cart" />
       </div>
-      <dic className="navbar__mobile" onClick={handleSidebar} >
-        <img src="Bars" alt="Bars" />
-      </dic>
+      <div className='navbar__mobile' onClick={handleSidebar}>
+        <img src={Bars} alt='Bars' />
+      </div>
     </div>
   );
 }
