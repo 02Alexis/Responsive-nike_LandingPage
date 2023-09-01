@@ -262,4 +262,99 @@
 }
 /* end nike */
 
-/* open nike */
+/* open responsive designe */
+@media screen and (max-width: 1700px) {
+  .navbar__menu {
+    margin-right: 100px;
+  }
+
+  .hero__image img {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  .container {
+    height: 700px;
+  }
+
+  .navbar__logo {
+    margin-right: 50px;
+  }
+
+  .navbar__logo img {
+    max-width: 40px;
+  }
+
+  .navbar__menu {
+    font-size: 14px;
+    margin-right: 50px;
+  }
+
+  .navbar__search {
+    height: 30px;
+    margin-right: 50px;
+  }
+
+  .navbar__search img {
+    max-width: 14px;
+  }
+
+  .navbar__cart {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar__cart img {
+    max-width: 14px;
+    max-height: 14px;
+  }
+
+  .title {
+    font-size: 120px;
+    width: 200px;
+  }
+
+  .description {
+    font-size: 14px;
+    width: 350px;
+  }
+
+  .learn-more {
+    padding: 10px 1.5rem;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  .social-media {
+    width: 126px;
+  }
+
+  .social-media img {
+    height: 20px;
+  }
+
+  .hero__image {
+    max-width: 850px;
+    margin-top: -4rem;
+    margin-left: -12rem;
+  }
+
+  .hero__color {
+    margin-top: 4rem;
+    row-gap: 2rem;
+  }
+
+  .color-preset {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+  }
+
+  .color-one,
+  .color-two,
+  .color-three {
+    height: 26px;
+    width: 26px;
+  }
+}
