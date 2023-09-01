@@ -4,7 +4,7 @@ import Twitter from "../assets/twitter.png";
 
 import ShoesOne from "../assets/shoes1.png";
 
-function Hero() {
+function Hero({ handleColor, buttonStyle, shoesStyle, selectedColorStyle }) {
   const socmeds = [
     {
       name: "Facebook",
@@ -39,7 +39,9 @@ function Hero() {
           </span>
         </div>
 
-        <button className="learn-more button-one">Leer más</button>
+        <button className={`learn-more ${buttonStyle || "button-one"}`}>
+          Leer más
+        </button>
 
         <div className="social-media">
           {socmeds.map((list, index) => (
@@ -51,15 +53,17 @@ function Hero() {
       </div>
 
       <div className="hero__image">
-        <img src={ShoesOne} alt="Zapatillas" />
+        <img src={shoesStyle || ShoesOne} alt="Zapatillas" />
       </div>
 
       <div className="hero__color">
         {colors.map((color, index) => (
           <div
-            className={`color-preset ${index == 0 ? "color-active" : ""}`}
+            className={`color-preset ${
+              index == (selectedColorStyle || 0) ? "color-active" : ""
+            }`}
             key={index}
-            // onClick={() => handleColor(index)}
+            onClick={() => handleColor(index)}
           >
             <div className={color} />
           </div>

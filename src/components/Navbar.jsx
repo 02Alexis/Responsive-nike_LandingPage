@@ -2,7 +2,7 @@ import NikeLogo from "../assets/logo.png";
 import MagnifyingGlass from "../assets/magnifying glass.png";
 import Cart from "../assets/cart.png";
 
-function Navbar() {
+function Navbar({ navbarStyle, handleSidebar }) {
   const navbarMenu = [
     {
       name: "Men",
@@ -45,11 +45,11 @@ function Navbar() {
         ))}
       </div>
 
-      <div className="navbar__search navbar-one">
+      <div className={`navbar__search ${navbarStyle || 'navbar-one'}`}>
         <img src={MagnifyingGlass} alt="MagnifyingGlass" />
         <input type="text" />
       </div>
-      <div className="navbar__cart navbar-one">
+      <div className={`navbar__cart ${navbarStyle || 'navbar-one'}`}>
         <img src={Cart} alt="cart" />
       </div>
     </div>

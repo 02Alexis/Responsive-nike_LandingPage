@@ -1,9 +1,9 @@
 import BackgroundOne from "../assets/background1.png";
 
-function Background() {
+function Background({ backgroundStyle }) {
   return (
     <div className="background">
-      <img src={BackgroundOne} alt="BackgroundOne"  />
+      <img src={backgroundStyle || BackgroundOne} alt="BackgroundOne"  />
     </div>
   );
 }
