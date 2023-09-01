@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Background from "./components/Background";
 import Hero from "./components/Hero";
@@ -11,9 +12,12 @@ import ShoesThree from "./assets/shoes3.png";
 import BackgroundOne from "./assets/background1.png";
 import BackgroundTwo from "./assets/background2.png";
 import BackgroundThree from "./assets/background3.png";
-import { useState } from "react";
+import BackgroundOpacity from "./components/BackgroundOpacity";
+import Sidebar from "./components/Sidebar";
 
 function App() {
+  const [selectedStyle, setSelectedStyle] = useState({});
+  const [show, setShow] = useState(false);
   const styles = [
     {
       navbarStyle: "navbar-one",
@@ -38,9 +42,6 @@ function App() {
     },
   ];
 
-  const [selectedStyle, setSelectedStyle] = useState({});
-  const [show, setShow] = useState(false);
-
   const handleSidebar = () => {
     setShow(!show);
     document.documentElement.classList.toggle("overflow-hidden");
@@ -53,7 +54,10 @@ function App() {
   return (
     <div>
       <div className="container">
-        <Navbar navbarStyle={selectedStyle.navbarStyle} />
+        <Navbar
+          navbarStyle={selectedStyle.navbarStyle}
+          handleSidebar={handleSidebar}
+        />
         <Hero
           handleColor={handleColor}
           buttonStyle={selectedStyle.buttonStyle}
@@ -63,6 +67,8 @@ function App() {
         <Background backgroundStyle={selectedStyle.backgroundStyle} />
         <Nike />
       </div>
+      {show && <BackgroundOpacity handleSidebar={handleSidebar} />}
+      <Sidebar handleSidebar={handleSidebar} show={show} />
     </div>
   );
 }

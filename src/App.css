@@ -89,6 +89,12 @@
   height: 20px;
 }
 
+/* diseño responsivo */
+.navbar__mobile {
+  display: none;
+}
+/* end diseño responsivo */
+
 .navbar-one {
   background-color: #f3516f;
 }
@@ -100,6 +106,55 @@
 .navbar-three {
   background-color: #cb4c4f;
 }
+
+/* background opacity */
+.background-opacity {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #0000009a;
+  z-index: 10;
+}
+/* end background opacity */
+
+/* sidebar */
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 280px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  z-index: 20;
+  transition: all 300ms ease-in-out;
+}
+
+.sidebar.show {
+  right: 0;
+}
+
+.close {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.menu__mobile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.menu__mobile a {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* end sidebar */
+
 
 /* End Navbar */
 
@@ -356,5 +411,26 @@
   .color-three {
     height: 26px;
     width: 26px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .navbar {
+    column-gap: unset;
+    justify-content: space-between;
+  }
+
+  .navbar__menu,
+  .navbar__search,
+  .navbar__cart {
+    display: none;
+  }
+
+  .navbar__mobile {
+    display: block;
   }
 }

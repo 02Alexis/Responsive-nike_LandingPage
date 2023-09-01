@@ -1,6 +1,8 @@
 import NikeLogo from "../assets/logo.png";
 import MagnifyingGlass from "../assets/magnifying glass.png";
 import Cart from "../assets/cart.png";
+import Bars from "../assets/bars.png";
+
 
 function Navbar({ navbarStyle, handleSidebar }) {
   const navbarMenu = [
@@ -52,6 +54,9 @@ function Navbar({ navbarStyle, handleSidebar }) {
       <div className={`navbar__cart ${navbarStyle || 'navbar-one'}`}>
         <img src={Cart} alt="cart" />
       </div>
+      <dic className="navbar__mobile" onClick={handleSidebar} >
+        <img src="Bars" alt="Bars" />
+      </dic>
     </div>
   );
 }
