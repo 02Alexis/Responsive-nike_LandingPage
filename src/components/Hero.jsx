@@ -1,0 +1,72 @@
+import Facebook from "../assets/facebook.png";
+import Instagram from "../assets/instagram.png";
+import Twitter from "../assets/twitter.png";
+
+import ShoesOne from "../assets/shoes1.png";
+
+function Hero() {
+  const socmeds = [
+    {
+      name: "Facebook",
+      logo: Facebook,
+      link: "#",
+    },
+    {
+      name: "Instagram",
+      logo: Instagram,
+      link: "#",
+    },
+    {
+      name: "Twitter",
+      logo: Twitter,
+      link: "#",
+    },
+  ];
+
+  const colors = ["color-one", "color-two", "color-three"];
+  return (
+    <div className="hero">
+      <div className="hero__content">
+        <div className="title">
+          <span>Just do it</span>
+        </div>
+
+        <div className="description">
+          <span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            fringilla luctus risus, non molestie quam. Nulla metus ante, tempor
+            et sem at, tempor malesuada metus.
+          </span>
+        </div>
+
+        <button className="learn-more button-one">Leer más</button>
+
+        <div className="social-media">
+          {socmeds.map((list, index) => (
+            <a href={list.link} key={index}>
+              <img src={list.logo} alt={list.name} />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div className="hero__image">
+        <img src={ShoesOne} alt="Zapatillas" />
+      </div>
+
+      <div className="hero__color">
+        {colors.map((color, index) => (
+          <div
+            className={`color-preset ${index == 0 ? "color-active" : ""}`}
+            key={index}
+            // onClick={() => handleColor(index)}
+          >
+            <div className={color} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Hero;
